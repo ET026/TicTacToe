@@ -1,5 +1,7 @@
 ﻿@page "/"
 @using TicTacToe.Components;
+@using TicTacToe.Models;
+
 
 <main>
 
@@ -19,7 +21,7 @@
     <div class="board">
         @foreach(var s  in Squares)
         {
-            <Square SquareModel="s"/>
+            <Square SquareModel="s" onMouseUp="() => MouseUp(s)"/>
         }
 
     </div>
@@ -27,5 +29,16 @@
 </main>
 
 @code {
+    private void MouseUp(SquareModel s)
+    {
+        if (isGameRunning)
+        {
+            ValidateHit(s);
+            SwitchPlayers(); 
+        }
+    }
 
+
+    
 }
+    

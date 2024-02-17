@@ -99,12 +99,14 @@ main{
     min-height: 100vh;
 }
 
-.x {
+.x-symbol {
     background-image: url('../img/x.png');
+    background-size: cover;
 }
 
-.o {
+.o-symbol {
     background-image: url('../img/o.png');
+    background-size: cover;
 }
 
 .square{
