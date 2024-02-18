@@ -80,6 +80,20 @@ code {
 
 /**/
 
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    background-color:white;
+    font-size: 1.5rem;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
 .board{
     align-content:center;
     display:flex;
@@ -87,16 +101,26 @@ code {
     height: 600px;
     width: 600px;
     justify-content: center;
-    border: 1px solid black;
+    border: 2px solid black;
     background-color: #e6e6e6;
+    border-radius: 25px;
+
 }
 
-main{
-    align-content:center;
-    display:flex;
-    flex-flow: column wrap;
+main {
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-flow: row-reverse;
     justify-content: center;
     min-height: 100vh;
+    background-image: url('../img/tic-tac-toe-game-texture-hand-drawn-seamless-cross-shapes-pattern-black-elements-on-white-background-2ggd3mm.jpg');
+    background-size: cover;
+    margin: 5px;
+}
+
+main h1{
+    text-align: center;
 }
 
 .x-symbol {
@@ -114,4 +138,5 @@ main{
     height: 180px;
     margin: 10px;
     background-color: white;
+    border-radius: 25px;
 }

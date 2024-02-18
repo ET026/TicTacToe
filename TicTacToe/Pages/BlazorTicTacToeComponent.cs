@@ -7,10 +7,9 @@ namespace TicTacToe.Pages
         int player1Score = 0;
         int player2Score = 0;
 
-        string player1 = ""; 
-        string player2 = ""; 
+        string player1 = "Erenay"; 
+        string player2 = "Tozun"; 
         string currentPlayer = "";
-        int hitPosition = 0;
         bool isGameRunning = true;
 
         public List<SquareModel> Squares { get; set; } = new List<SquareModel>();
