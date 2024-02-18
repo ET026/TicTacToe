@@ -8,5 +8,6 @@ namespace TicTacToe.Models
 
         public int Id { get; set; }
         public string PlayerSymbol { get; set; } 
+
     }
 }

@@ -4,7 +4,9 @@ namespace TicTacToe.Pages
 {
     public partial class BlazorTicTacToeComponent
     {
-        int score = 0;
+        int player1Score = 0;
+        int player2Score = 0;
+
         string player1 = "Player 1"; 
         string player2 = "Player 2"; 
         string currentPlayer = "";
@@ -81,21 +83,33 @@ namespace TicTacToe.Pages
         {
             if (isGameRunning && square.PlayerSymbol == null)
             {
-                square.PlayerSymbol = currentPlayer == player1 ? "X" : "O";
+                square.PlayerSymbol = currentPlayer == player1 ? "x-symbol" : "o-symbol";
                 if (CheckWin(square.PlayerSymbol))
                 {
                     EndGame(currentPlayer);
+                    _ = currentPlayer == player1 ? player1Score++ : player2Score++;
+                    ResetGame();
+                    
                 }
                 else if (CheckDraw())
                 {
                     
                     EndGame("Draw");
+                    ResetGame();
                 }
-                else
-                {
-                    SwitchPlayers();
-                }
+                
+                SwitchPlayers();
             }
+        }
+
+        private void ResetGame()
+        {
+            foreach (var square in Squares)
+            {
+                square.PlayerSymbol = null;
+            }
+            isGameRunning = true;
+            SetCurrentPlayer();
         }
 
 

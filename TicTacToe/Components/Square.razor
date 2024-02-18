@@ -1,18 +1,18 @@
-﻿<div @onmouseup="ValidateHit" class="square @(SquareModel.PlayerSymbol == "X" ? "x-symbol" : "o-symbol")" />
+﻿<div @onmouseup="ValidateHit" class="square @(SquareModel.PlayerSymbol == "x-symbol" ? "x-symbol" : "o-symbol")">
+    @SquareModel.PlayerSymbol
+</div>
 
 
 
 @code {
     [Parameter]
     public SquareModel SquareModel { get; set; }
+
     [Parameter]
-    public EventCallback onMouseUp { get; set; }
-    
-    private void ValidateHit()
+    public EventCallback<SquareModel> onMouseUp { get; set; }
+
+    private async Task ValidateHit()
     {
-        onMouseUp.InvokeAsync(new EventArgs());
-
-
+        await onMouseUp.InvokeAsync(SquareModel);
     }
-
 }
