@@ -1,0 +1,38 @@
+﻿@using TicTacToe.Models;
+
+
+@page "/"
+
+<main>
+
+    <h1>Welcome to Tic Tac Toe</h1>
+
+    <form @onsubmit="AddPlayer">
+
+        <div class="form-group">
+            <label for="Id">ID:</label>
+            <input type="text" id="Id" @bind="player.Id" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="PlayerName">Player Name:</label>
+            <input type="text" id="PlayerName" @bind="player.playerName" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Player</button>
+
+    </form>
+
+</main>
+
+@code {
+    Players playerName = new Players();
+
+    async Task AddPlayer()
+    {
+        // Here you can add the player to your data store or perform any other action
+        // For example, you might save the player to a database
+        // For simplicity, let's assume we just return a success message
+        Console.WriteLine($"Player added - ID: {player.Id}, Name: {player.playerName}");
+    }
+}
