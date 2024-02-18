@@ -7,8 +7,8 @@ namespace TicTacToe.Pages
         int player1Score = 0;
         int player2Score = 0;
 
-        string player1 = "Player 1"; 
-        string player2 = "Player 2"; 
+        string player1 = ""; 
+        string player2 = ""; 
         string currentPlayer = "";
         int hitPosition = 0;
         bool isGameRunning = true;
