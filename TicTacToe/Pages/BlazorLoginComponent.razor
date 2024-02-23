@@ -1,6 +1,5 @@
 ﻿@using TicTacToe.Models;
 
-
 @page "/"
 
 <main>
@@ -16,7 +15,7 @@
 
         <div class="form-group">
             <label for="PlayerName">Player Name:</label>
-            <input type="text" id="PlayerName" @bind="player.playerName" class="form-control" />
+            <input type="text" id="PlayerName" @bind="player.PlayerName" class="form-control" />
         </div>
 
         <button type="submit" class="btn btn-primary">Add Player</button>
@@ -26,13 +25,14 @@
 </main>
 
 @code {
-    Players playerName = new Players();
+    Players player = new Players(); // corrected variable name
 
     async Task AddPlayer()
     {
-        // Here you can add the player to your data store or perform any other action
-        // For example, you might save the player to a database
-        // For simplicity, let's assume we just return a success message
-        Console.WriteLine($"Player added - ID: {player.Id}, Name: {player.playerName}");
+        
+        PlayerService.AddPlayer(player);
+
+       
+        player = new Players();
     }
 }
